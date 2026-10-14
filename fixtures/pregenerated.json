@@ -1,0 +1,37 @@
+{
+  "analysis_version": "0.7.0",
+  "demo_sha256": "04d250ac00f5c75b713d541111b921ef5407c5106b32fb3a2aeea164fe7223ba",
+  "generation_origin": "approved-deterministic-selection/no-api",
+  "generator_model_id": "NO_MODEL_DETERMINISTIC_RULES",
+  "interpretations": [
+    {
+      "selection": {
+        "fact_ids": [
+          "OVERALL_REVENUE_DELTA"
+        ],
+        "interpretation_type": "OVERALL_REVENUE_DOWN",
+        "uncertainty_type": "CAUSE_UNKNOWN"
+      },
+      "template_text": "全体の売上が減少しています。根本原因はこの情報だけでは確定できません。 原因は特定できません。"
+    },
+    {
+      "selection": {
+        "fact_ids": [
+          "CHANNEL_REVENUE_DELTA_01",
+          "CHANNEL_REVENUE_DELTA_02"
+        ],
+        "interpretation_type": "CHANNEL_VARIATION_OBSERVED",
+        "uncertainty_type": "LIMITED_DATA"
+      },
+      "template_text": "チャネル別の売上差額を集計しました。内訳を確認してください。 今回の入力範囲を超えることは判断できません。"
+    }
+  ],
+  "schema_version": "pregenerated/v1",
+  "source_sha256": {
+    "analysis.py": "6c4af278a49063ee9e6a636c08dbb3c3c034d92a5dd71747ca868a03e93fdf58",
+    "data.py": "a9eab895a885e9b2cfa93e48e3ee2c2e11839c209f2a2b78d8b83fffac8c0973",
+    "interpretation.py": "4f72fb5bc50f630c64125b51bacb5c3a269ff55c317453692adcbda2fdccd1e1"
+  },
+  "target_month": "2026-09",
+  "template_version": "0.7-m03-r3m1m5"
+}

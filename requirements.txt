@@ -1,0 +1,4 @@
+# Install only in an isolated virtual environment; no external API credentials required.
+streamlit>=1.54,<2
+pandas>=2.2,<3
+pytest>=8,<10
