@@ -486,7 +486,8 @@ def test_r01_r18_project_exposes_single_report_button_and_no_questions():
     assert "st.chat_input(" not in src
     assert "今回実行した関数のソースコードを開く" in src
     assert "https://github.com/hiromi1992/kpi-investigator" in src
-    assert "Webアプリは未公開" in src
+    assert "このアプリはライブAIを呼び出しません" in src
+    assert "Webアプリは未公開" not in src
     assert "未作成・未公開" not in src
     assert "CSVはこのアプリの実行サーバーへ送信され" in src
     assert "OpenAIなどの外部AIサービスには送信しません" in src
