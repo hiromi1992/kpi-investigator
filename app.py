@@ -223,5 +223,5 @@ if "last_report" in st.session_state:
     display_report(st.session_state["last_report"], raw)
 
 st.divider()
-st.caption("公開ソースRepository： https://github.com/hiromi1992/kpi-investigator（Public） | Webアプリは未公開 | 既存の公開ポートフォリオ： https://github.com/hiromi1992/ai-engineering-portfolio")
+st.caption("公開ソースRepository： https://github.com/hiromi1992/kpi-investigator（Public） | このアプリはライブAIを呼び出しません | 既存の公開ポートフォリオ： https://github.com/hiromi1992/ai-engineering-portfolio")
 st.caption("上限：通常ブラウザにつきAI付レポート1日3回、全体10回/日（実接続前の設計値）。現時点ではライブAIを呼べません。")
