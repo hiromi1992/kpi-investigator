@@ -39,4 +39,4 @@ python -m streamlit run app.py
 
 ## 公開状態・ライセンス
 
-この成果物は**公開前の候補**です。GitHub Repository・配信先URLは未作成です。利用条件・ライセンスは所有者が決定するまで追加しません。
+ソースコードは [GitHubのPublic Repository](https://github.com/hiromi1992/kpi-investigator) で閲覧できます。**Webアプリの公開・配信はまだ行っていません。** 利用条件・ライセンスは所有者が決定するまで追加しません。

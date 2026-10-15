@@ -172,7 +172,7 @@ def display_report(report: Report, current_raw: tuple[bytes, bytes] | None):
 
 st.markdown("# KPI Investigator")
 st.markdown("**Pythonで数字を検算し、根拠をたどれるEC分析ダッシュボード**")
-st.caption("v" + ANALYSIS_VERSION + " · 外部AI/Redis未接続のローカルMVP · 予測や因果断定は行いません")
+st.caption("v" + ANALYSIS_VERSION + " · 外部AI/Redis未接続のPython分析デモ · 予測や因果断定は行いません")
 with st.container(border=True):
     source = st.radio("データ", ["合成デモ（推奨）", "自分のCSV 2ファイル"], horizontal=True)
     demo = source.startswith("合成")
@@ -182,7 +182,7 @@ with st.container(border=True):
                (ROOT / "fixtures" / "order_lines.csv").read_bytes())
         st.caption("完全な合成データ／2026年8月と9月。初期画面から1操作でレポートを生成できます。")
     else:
-        st.warning("個人情報や秘密情報が入ったCSVはアップロードしないでください。解析データは外部へ送信されません。")
+        st.warning("アップロードしたCSVはこのアプリの実行サーバーへ送信され、Python分析に使用されます。OpenAIなどの外部AIサービスには送信しません。個人情報や秘密情報が入ったCSVはアップロードしないでください。")
         l,r = st.columns(2)
         with l: file_a = st.file_uploader("traffic.csv", type="csv", key="traffic", max_upload_size=2)
         with r: file_b = st.file_uploader("order_lines.csv", type="csv", key="orders", max_upload_size=2)
@@ -223,5 +223,5 @@ if "last_report" in st.session_state:
     display_report(st.session_state["last_report"], raw)
 
 st.divider()
-st.caption("公開予定のソースRepository: hiromi1992/kpi-investigator（未作成・未公開） | 既存の公開ポートフォリオ： https://github.com/hiromi1992/ai-engineering-portfolio")
+st.caption("公開ソースRepository： https://github.com/hiromi1992/kpi-investigator（Public） | Webアプリは未公開 | 既存の公開ポートフォリオ： https://github.com/hiromi1992/ai-engineering-portfolio")
 st.caption("上限：通常ブラウザにつきAI付レポート1日3回、全体10回/日（実接続前の設計値）。現時点ではライブAIを呼べません。")

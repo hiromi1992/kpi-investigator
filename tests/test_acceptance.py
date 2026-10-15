@@ -485,13 +485,19 @@ def test_r01_r18_project_exposes_single_report_button_and_no_questions():
     assert src.count('st.button("総合レポートを生成"')==1
     assert "st.chat_input(" not in src
     assert "今回実行した関数のソースコードを開く" in src
-    assert "未作成・未公開" in src
+    assert "https://github.com/hiromi1992/kpi-investigator" in src
+    assert "Webアプリは未公開" in src
+    assert "未作成・未公開" not in src
+    assert "CSVはこのアプリの実行サーバーへ送信され" in src
+    assert "OpenAIなどの外部AIサービスには送信しません" in src
     assert "st.tabs(" in src
 
 
 def test_packaged_source_provenance_and_no_external_credentials():
     assert "gpt-6.1-sol" in (ROOT/"kpi_investigator/ai.py").read_text("utf-8")
     assert not (ROOT/".streamlit/secrets.toml").exists()
-    assert not (ROOT/".git").exists()
+    ignored=(ROOT/".gitignore").read_text("utf-8")
+    assert ".env" in ignored and ".streamlit/secrets.toml" in ignored
+    # A real GitHub Actions checkout naturally has a .git directory.
     assert "upstash_redis" not in (ROOT/"app.py").read_text("utf-8")
     assert "import openai" not in (ROOT/"app.py").read_text("utf-8").lower()
